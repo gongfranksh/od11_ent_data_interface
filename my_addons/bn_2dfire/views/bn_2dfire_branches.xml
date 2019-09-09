@@ -1,0 +1,52 @@
+<openerp>
+    <data>
+        <!-- 列表视图 -->
+        <record id="bn_2dfire_branchs_view_trees" model="ir.ui.view">
+            <field name="name">bn.2dfire.branchs.tree</field>
+            <field name="model">bn.2dfire.branchs</field>
+            <field name="arch" type="xml">
+                <tree string="hhx_contract">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="appids"/>
+                    <field name="state"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 表单视图 -->
+        <record id="bn_2dfire_branchs_view_form" model="ir.ui.view">
+            <field name="name">bn.2dfire.branchs.form</field>
+            <field name="model">bn.2dfire.branchs</field>
+            <field name="arch" type="xml">
+                <form string="hhx_contract">
+                    <header>
+                        <button string="审核" name="btn_audit" type="object" class="oe_read_only oe_highlight"
+                                states="open" groups="bn_2dfire.2dfire_setting_group"/>
+                        <button string="终止" name="btn_stop" type="object" class="oe_read_only oe_highlight"
+                                states="confirm" confirm="终止" groups="bn_2dfire.2dfire_setting_group"/>
+                        <field name="state" widget="statusbar" statusbar_visible="open,confirm,close"/>
+                    </header>
+                    <sheet>
+                        <group col='4'>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="appids"/>
+                            <field name="company_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="action_bn_2dfire_branchs">
+            <field name="name">二维火门店绑定</field>
+            <field name="res_model">bn.2dfire.branchs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="bn_2dfire_branchs_view_trees"/>
+        </record>
+
+    </data>
+</openerp>

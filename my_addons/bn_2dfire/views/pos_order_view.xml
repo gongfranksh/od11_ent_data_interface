@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bn_2dfire_view_pos_form" model="ir.ui.view">
+        <field name="name">2dfirepos.order.form</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//notebook" position="inside">
+                    <page name="2direpayment" string="二维火收款信息">
+                        <group>
+                            <field name="bn_2dfire_payVo" colspan="4" nolabel="1">
+                                <tree editable="bottom" string="Statement lines">
+                                    <field name="kindpay_id"/>
+                                    <field name="kind_payment"/>
+                                    <field name="payTime"/>
+                                    <field name="kind_operator"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+
+                    <page name="2dfirebillinfo" string="二维火订单编号">
+                        <group>
+                            <field name="bn_2dire_orderid"/>
+                            <field name="pos_reference"/>
+
+                        </group>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

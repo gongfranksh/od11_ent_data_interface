@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+
+
+        <!-- ONBOARDING STEPS -->
+        <template id="onboarding_2dfire_shops_step_import">
+            <t t-call="base.onboarding_step">
+                <t t-set="title">授权门店设置</t>
+                <t t-set="description">导入授权门店</t>
+                <t t-set="done_icon" t-value="'fa-star'"/>
+                <t t-set="done_text">Looks great!</t>
+                <t t-set="btn_text">导入</t>
+                <t t-set="method" t-value="'action_sync_data'" />
+                <t t-set="model" t-value="'bn.2dfire.shops'"/>
+                <t t-set="state" t-value="state.get('import_register_branches_state')"/>
+            </t>
+        </template>
+
+        <!-- ONBOARDING STEPS -->
+        <template id="onboarding_2dfire_shops_step_binding">
+            <t t-call="base.onboarding_step">
+                <t t-set="title">绑定门店设置</t>
+                <t t-set="description">绑定门店</t>
+                <t t-set="done_icon" t-value="'fa-star'"/>
+                <t t-set="done_text">Looks great!</t>
+                <t t-set="btn_text">绑定</t>
+                <t t-set="method" t-value="'action_binding_branches'"/>
+                <t t-set="model" t-value="'bn.2dfire.shops'"/>
+                <t t-set="state" t-value="state.get('binding_register_branches_state')"/>
+            </t>
+        </template>
+
+
+        <!-- ONBOARDING STEPS -->
+        <template id="onboarding_2dfire_shops_step_setting_url">
+            <t t-call="base.onboarding_step">
+                <t t-set="title">二维火网站</t>
+                <t t-set="description">注册</t>
+                <t t-set="done_icon" t-value="'fa-star'"/>
+                <t t-set="done_text">Looks great!</t>
+                <t t-set="btn_text">注册</t>
+                <t t-set="method" t-value="'action_2dfire_register_url'"/>
+                <t t-set="model" t-value="'bn.2dfire.shops'"/>
+                <t t-set="state" t-value="state.get('binding_register_branches_state')"/>
+            </t>
+        </template>
+
+
+        <!-- ONBOARDING PANEL-->
+        <template id="bn_2dfire_config_onboarding_panel" name="sale.quotation.onboarding.panel">
+            <t t-call="base.onboarding_container">
+                <t t-set="classes" t-value="'o_onboarding_violet'"/>
+                <t t-set="bg_image" t-value="'/sale/static/src/img/sale_quotation_onboarding_bg.jpg'"/>
+                <t t-set="close_method" t-value="'action_close_onboarding'"/>
+                <t t-set="close_model" t-value="'bn.2dfire.shops'"/>
+                <t t-call="bn_2dfire.onboarding_2dfire_shops_step_setting_url" name="二维火注册"/>
+                <t t-call="bn_2dfire.onboarding_2dfire_shops_step_import" name="授权门店设置"/>
+                <t t-call="bn_2dfire.onboarding_2dfire_shops_step_binding" name="绑定门店设置"/>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

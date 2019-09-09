@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="bn_2dfire_binding_wizard_view" model="ir.ui.view">
+            <field name="name">Binding Shops</field>
+            <field name="model">bn.2dfire.binding.wizard</field>
+            <field name="arch" type="xml">
+                <form string=" 绑定门店  Binding Shops">
+                    <field name="shop_ids"/>
+                    <footer>
+                        <button string="绑定 Binding" name="binding_button" type="object" class="btn-primary"/>
+                        <button string="取消 Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="bn_2dfire_binding_shops_wizard_tree_view" model="ir.ui.view">
+            <field name="name">绑定门店  Binding Shops Wizard</field>
+            <field name="model">bn.2dfire.binding.shops.wizard</field>
+            <field name="arch" type="xml">
+                <!-- the user list is editable, but one cannot add or delete rows -->
+                <tree string="Shopes" editable="bottom" create="false" delete="false">
+                    <field name="shop_id"/>
+                    <field name="branch_id"/>
+                </tree>
+            </field>
+        </record>
+        <act_window id="bn_2dfire_binding_shops_wizard_action"
+                    name="Binding Shops"
+                    src_model="bn.2dfire.shops"
+                    res_model="bn.2dfire.binding.wizard"
+                    view_type="form" view_mode="form"
+                    key2="client_action_multi" target="new"
+                    groups="base.group_erp_manager"/>
+
+
+
+
+    </data>
+</odoo>

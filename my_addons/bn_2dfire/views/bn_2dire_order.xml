@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="2dire_product_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.product.search</field>
+            <field name="model">bn.2dfire.product</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                        <filter string="编码" name="code" domain="[]" context="{'group_by':'code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="2dire_product_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.product</field>
+            <field name="model">bn.2dfire.product</field>
+            <field name="arch" type="xml">
+                <tree string="Lead Tags">
+                    <field name="entityId"/>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.search</field>
+            <field name="model">bn.2dfire.order</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.order</field>
+            <field name="model">bn.2dfire.order</field>
+            <field name="arch" type="xml">
+                <tree string="Lead Tags">
+                    <field name="entityId"/>
+                    <field name="ordersn"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_list_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.orderlist.search</field>
+            <field name="model">bn.2dfire.order.orderlist</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="2dire_order_list_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.orderlist.tree</field>
+            <field name="model">bn.2dfire.order.orderlist</field>
+            <field name="arch" type="xml">
+                <tree string="Order List">
+                    <field name="entityId"/>
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="accountNum"/>
+                    <field name="fee"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="2dire_order_totalpayvo_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.totalpayvo.search</field>
+            <field name="model">bn.2dfire.order.totalpayvo</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                        <filter string="日期->天" name="groupby_days" domain="[]" context="{'group_by':'currDate:day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="2dire_order_totalpayvo_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.totalpayvo.tree</field>
+            <field name="model">bn.2dfire.order.totalpayvo</field>
+            <field name="arch" type="xml">
+                <tree string="PayVol List">
+                    <field name="orderids"/>
+                    <field name="entityId"/>
+                    <field name="currDate"/>
+                    <field name="operateDate"/>
+                    <field name="receiveAmount"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_servicebillvo_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.servicebillvo.search</field>
+            <field name="model">bn.2dfire.order.servicebillvo</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                        <!--<filter string="日期->天" name="groupby_days" domain="[]" context="{'group_by':'currDate:day'}"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_servicebillvo_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.servicebillvo.tree</field>
+            <field name="model">bn.2dfire.order.servicebillvo</field>
+            <field name="arch" type="xml">
+                <tree string="PayVol List">
+                    <field name="orderids"/>
+                    <field name="entityId"/>
+                    <field name="agioAmount"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_payvo_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.payvo.search</field>
+            <field name="model">bn.2dfire.order.payvo</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                        <filter string="日期->天" name="groupby_days" domain="[]" context="{'group_by':'payTime:day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_payvo_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.payvo.tree</field>
+            <field name="model">bn.2dfire.order.payvo</field>
+            <field name="arch" type="xml">
+                <tree string="PayVol List">
+                    <field name="orderids"/>
+                    <field name="entityId"/>
+                    <field name="kindPaySortName"/>
+                    <field name="fee"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_ordervo_tree_search" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.payvo.search</field>
+            <field name="model">bn.2dfire.order.payvo</field>
+            <field name="arch" type="xml">
+                <search string="xxxx">
+                    <group expand="0" string="Group By">
+                        <filter string="门店" name="entityId" domain="[]" context="{'group_by':'entityId'}"/>
+                        <filter string="日期->天" name="groupby_days" domain="[]" context="{'group_by':'openTime:day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="2dire_order_ordervo_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.order.ordervo.tree</field>
+            <field name="model">bn.2dfire.order.ordervo</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="orderids"/>
+                    <field name="entityId"/>
+                    <field name="innerCode"/>
+                    <field name="simpleCode"/>
+                    <field name="openTime"/>
+                    <field name="store_code"/>
+                    <field name="store_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_bn_2dfire_setting_product" model="ir.actions.act_window">
+            <field name="name">二维火商品资料</field>
+            <field name="res_model">bn.2dfire.product</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_entityId':1}"/>
+            <field name="search_view_id" ref="2dire_product_tree_search"/>
+        </record>
+
+        <!--订单同步数据-->
+        <record id="action_bn_2dfire_order" model="ir.actions.act_window">
+            <field name="name">bn.2dfire.order</field>
+            <field name="res_model">bn.2dfire.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_entityId':1}"/>
+            <field name="search_view_id" ref="2dire_order_tree_search"/>
+        </record>
+
+
+        <record id="action_bn_2dfire_order_ordervo" model="ir.actions.act_window">
+            <field name="name">bn.2dfire.order.ordervo</field>
+            <field name="res_model">bn.2dfire.order.ordervo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_entityId':1,'search_default_groupby_days':1}"/>
+            <field name="search_view_id" ref="2dire_order_ordervo_tree_search"/>
+        </record>
+
+        <record id="action_bn_2dfire_order_list" model="ir.actions.act_window">
+            <field name="name">bn.2dfire.orderlist</field>
+            <field name="res_model">bn.2dfire.order.orderlist</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_entityId':1}"/>
+            <field name="search_view_id" ref="2dire_order_list_tree_search"/>
+        </record>
+
+        <record id="action_bn_2dfire_order_totalpayvo" model="ir.actions.act_window">
+            <field name="name">bn.2dfire.order.totalpayvo</field>
+            <field name="res_model">bn.2dfire.order.totalpayvo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_groupby_days':1}"/>
+            <field name="search_view_id" ref="2dire_order_totalpayvo_tree_search"/>
+
+        </record>
+
+
+        <record id="action_bn_2dfire_order_payvo" model="ir.actions.act_window">
+            <field name="name">收款明细</field>
+            <field name="res_model">bn.2dfire.order.payvo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_groupby_days':1,'search_default_entityId':1}"/>
+            <field name="search_view_id" ref="2dire_order_payvo_tree_search"/>
+        </record>
+
+
+        <record id="action_bn_2dfire_order_kindpayvolist" model="ir.actions.act_window">
+            <field name="name">kindpayvolist</field>
+            <field name="res_model">bn.2dfire.order.kindpayvolist</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_bn_2dfire_order_servicebillvo" model="ir.actions.act_window">
+            <field name="name">servicebillvo</field>
+            <field name="res_model">bn.2dfire.order.servicebillvo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_entityId':1}"/>
+            <field name="search_view_id" ref="2dire_order_servicebillvo_tree_search"/>
+        </record>
+
+
+        <menuitem name="二维火->商品"
+                  id="bn_2dfire_setting_product_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_setting_product"/>
+
+        <menuitem name="二维火->销售单"
+                  id="bn_2dfire_order_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order"/>
+
+        <menuitem name="二维火->销售单->ordervo"
+                  id="bn_2dfire_order_ordervo_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order_ordervo"/>
+
+
+        <menuitem name="二维火->销售单->商品明细"
+                  id="bn_2dfire_order_list_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order_list"/>
+
+
+        <menuitem name="二维火->销售单->收款明细->totalpayvo"
+                  id="bn_2dfire_order_totalpayvo_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order_totalpayvo"/>
+
+        <menuitem name="二维火->销售单->收款明细->payvo"
+                  id="bn_2dfire_order_payvo_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order_payvo"/>
+
+
+        <menuitem name="二维火->销售单->kindpayvolist"
+                  id="bn_2dfire_order_kindpayvolist_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order_kindpayvolist"/>
+
+
+        <menuitem name="二维火->销售单->servicebillvo"
+                  id="bn_2dfire_order_servicebillvo_menu"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_bn_2dfire_order_servicebillvo"/>
+
+    </data>
+</odoo>

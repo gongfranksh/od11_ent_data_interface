@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="2dire_appid_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.appid</field>
+            <field name="model">bn.2dfire.appid</field>
+            <field name="arch" type="xml">
+                <tree string="Lead Tags">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_branchs_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.branchs</field>
+            <field name="model">bn.2dfire.branchs</field>
+            <field name="arch" type="xml">
+                <tree string="Lead Tags">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="2dire_url_tree_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.url</field>
+            <field name="model">bn.2dfire.url</field>
+            <field name="arch" type="xml">
+                <tree string="Lead Tags">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_bn_2dfire_setting_appid" model="ir.actions.act_window">
+            <field name="name">Appid Setting</field>
+            <field name="res_model">bn.2dfire.appid</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="action_bn_2dfire_url" model="ir.actions.act_window">
+            <field name="name">调用地址维护</field>
+            <field name="res_model">bn.2dfire.url</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="action_bn_2dfire_log" model="ir.actions.act_window">
+            <field name="name">同步日志</field>
+            <field name="res_model">bn.2dfire.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="1-->Appid设置"
+                  id="bn_2dfire_appid_setting_menu"
+                  parent="bn_2dfire_setting_interface_menu"
+                  action="action_bn_2dfire_setting_appid"/>
+
+        <menuitem name="2-->调用地址维护"
+                  id="bn_2dfire_urlsetting_menu"
+                  parent="bn_2dfire_setting_interface_menu"
+                  action="action_bn_2dfire_url"/>
+
+        <menuitem name="3-->同步日志"
+                  id="bn_2dfire_log_menu"
+                  parent="bn_2dfire_setting_interface_menu"
+                  action="action_bn_2dfire_log"/>
+
+
+        <menuitem name="1-->授权门店"
+                  sequence="10"
+                  id="bn_2dfire_shops_menu"
+                  parent="bn_2dfire_setting_stores_menu"
+                  action="action_bn_2dfire_stores"/>
+
+        <menuitem name="2-->门店绑定"
+                  sequence="20"
+                  id="bn_2dfire_branch_setting_menu"
+                  parent="bn_2dfire_setting_stores_menu"
+                  action="action_bn_2dfire_branchs"/>
+
+    </data>
+</odoo>

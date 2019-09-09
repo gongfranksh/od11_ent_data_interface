@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sync_2dfire_wizard" model="ir.ui.view">
+            <field name="name">同步二维火资料</field>
+            <field name="model">proc.sync.2dfire</field>
+            <field name="arch" type="xml">
+                <form string="Scheduler Parameters">
+                    <p>
+                        二维火同步处理.
+                    </p>
+                    <footer>
+
+                        <button name="sync_2dfire_shop_v20" string="授权店资料同步" type="object" class="btn-primary"/>
+                        <button name="sync_2dfire_interface_v20" string="接口反馈查看" type="object" class="btn-primary"/>
+                        <button name="sync_2dfire_product_v20" string="产品接口获取" type="object" class="btn-primary"/>
+                        <button name="sync_2dfire_payment_v20" string="付款方式接口获取" type="object" class="btn-primary"/>
+                        <button name="sync_2dfire_sales" string="销售更新" type="object" class="btn-primary"/>
+                        <button name="sync_2dfire_product" string="产品更新" type="object" class="btn-primary"/>
+                        <button name="sync_2dfire_kindpay" string="付款方式更新" type="object" class="btn-primary"/>
+                        <button name="interface_2dfire_to_bnc_category" string="类别跟新" type="object"
+                                class="btn-primary"/>
+                        <button name="interface_2dfire_to_bnc_product" string="产品更新BNC" type="object"
+                                class="btn-primary"/>
+                        <button name="interface_2dfire_to_bnc_sales" string="销售更新BNC" type="object"
+                                class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_proc_sync_2dfire" model="ir.actions.act_window">
+            <field name="name">执行处理</field>
+            <field name="res_model">proc.sync.2dfire</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="手工同步数据"
+                  id="bn_2dfire_sync_2dfire_menu"
+                  sequence="15"
+                  parent="bn_2dfire_sync_data_menu"
+                  action="action_proc_sync_2dfire"/>
+
+
+    </data>
+    <!-- actions -->
+
+</odoo>

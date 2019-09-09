@@ -1,0 +1,154 @@
+<openerp>
+    <data>
+        <!-- 列表视图 -->
+        <record id="bn_2dfire_shops_view_trees" model="ir.ui.view">
+            <field name="name">bn.2dfire.shops.tree</field>
+            <field name="model">bn.2dfire.shops</field>
+            <field name="arch" type="xml">
+                <!--<tree string="bn_2dfire_shopes" banner_route="/sales/sale_quotation_onboarding_panel" >-->
+                <!--<tree string="bn_2dfire_shopes" banner_route="/bn_2dfire/bn_2dfire_onboarding_panel/" >-->
+                <tree string="bn_2dfire_shopes" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="entityId"/>
+                    <field name="isAdd"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 表单视图 -->
+        <record id="bn_2dfire_shops_view_form" model="ir.ui.view">
+            <field name="name">bn.2dfire.shops.form</field>
+            <field name="model">bn.2dfire.shops</field>
+            <field name="arch" type="xml">
+                <form string="bn_2dfire_shopes">
+                    <header>
+                        <button string="加入需要同步资料门店列表" name="btn_insert_branches" type="object"
+                                class="oe_read_only oe_highlight"
+                                groups="bn_2dfire.2dfire_setting_group"/>
+                        <button string="接口授权地址" name="btn_authorized_url" type="object"
+                                class="oe_read_only oe_highlight"
+                                groups="bn_2dfire.2dfire_setting_group"/>
+
+                    </header>
+                    <sheet>
+                        <group col='4'>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="address"/>
+                            <field name="entityId"/>
+                            <field name="memo"/>
+                            <field name="isAdd"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 看板视图 -->
+        <record id="bn_2dfire_shops_kanban_view" model="ir.ui.view">
+            <field name="name">bn.2dfire.shops.kanban</field>
+            <field name="model">bn.2dfire.shops</field>
+            <field name="arch" type="xml">
+                <kanban >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="entityId"/>
+                    <field name="memo"/>
+                    <field name="isAdd"/>
+                    <templates>
+                        <t t-name="kanban-box">
+
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_body">
+                                    <div>
+
+                                        <a type="open">
+                                            EntityId:
+                                            <field name="entityId"/>
+                                        </a>
+
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            代码：
+                                            <field name="code"/>
+                                        </li>
+                                        <li>
+                                            名称：
+                                            <field name="name"/>
+                                        </li>
+                                        <li>
+                                            地址：
+                                            <field name="address"/>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn"
+                                       data-toggle="dropdown" role="button"
+                                       aria-label="Dropdown menu"
+                                       title="Dropdown menu"
+                                       href="#">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <!-- Edit and Delete actions, if available: -->
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit" class="dropdown-item">
+                                                <i class="fa fa-edit">编辑</i>
+                                            </a>
+                                        </t>
+
+                                        <a role="menuitem" type="object" name="btn_insert_branches"
+                                           class="dropdown-item">
+                                            <i class="fa fa-plus">加入</i>
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <div class="oe_kanban_footer">
+                                    <div class="oe_kanban_footer_left">
+                                        <div class="o_kanban_manage_button_section">
+                                            <a class="o_kanban_manage_toggle_button" type="object"
+                                               name="btn_insert_branches" role="button" aria-label="加入" title="加入">
+                                                <i class="fa fa-plus-square"/>
+                                            </a>
+                                            <a class="o_kanban_manage_toggle_button" type="object"
+                                               name="btn_authorized_url" role="button" aria-label="注册" title="注册">
+                                                <i class="fa fa-id-card"/>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="oe_kanban_footer_right">
+                                        <!-- Right hand footer... -->
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!-- Action -->
+
+        <record id="action_bn_2dfire_stores" model="ir.actions.act_window">
+            <field name="name">授权门店资料</field>
+            <field name="res_model">bn.2dfire.shops</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="bn_2dfire.bn_2dfire_shops_kanban_view"/>
+            <!--<field name="view_id" ref="bn_2dfire_shops_view_trees"/>-->
+        </record>
+
+    </data>
+</openerp>

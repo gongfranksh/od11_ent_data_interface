@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="module_bn_2dfire">
+        <field name="name">二维火权限组</field>
+    </record>
+
+
+    <record id="2dfire_setting_group" model="res.groups">
+        <field name="name">二维火设置组</field>
+        <field name="category_id" ref="module_bn_2dfire"/>
+    </record>
+
+
+</odoo>

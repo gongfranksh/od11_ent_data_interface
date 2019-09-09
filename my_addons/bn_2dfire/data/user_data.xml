@@ -1,0 +1,8 @@
+<odoo>
+        <record id="userid_100" model="res.users">
+            <field  name="name">系统导入</field>
+            <field  name="login">auto-import-2dfire-users</field>
+            <field  name="active">True</field>
+        </record>
+
+</odoo>
